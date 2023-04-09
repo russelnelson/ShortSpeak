@@ -24,6 +24,8 @@ CmprsPrmpt|GPT4Lng:`{Your Prompt Text}`
 
 ## Examples
 
+A compressed prompt uses the format `{Expected Response}|{Target Model}:{Condition}`
+
 Summarize this text in 30 words:
 ```
 Summarize|GPT4Lng:30words`{Your Text}`
@@ -34,13 +36,56 @@ Recommend a recipe based on specific dietary preferences or restrictions:
 RcmndRecipe|GPT4Lng:Vegan
 ```
 
-Generate text conditioned on key information. This example demonstrates compressing a prompt from the OpenAI Codebook, "Write an email to a colleague named Jill congratulating her on her promotion. The tone should be warm yet professional. Mention how you admire the work she's been putting in. Include a joke about how her pet lizard Max enjoys eating grasshoppers. Mention how you're looking forward to the team off-site next week":
+You can further adjust the response formatting by prepending the instruction to the compressed prompt.
+
+Bullet points:
+```
+ListBullets|GPT4Lng:`Explain the benefits of exercise`
+```
+
+Numbered list:
+```
+ListNumbered|GPT4Lng:`List the steps to create a successful engagement proposal`
+```
+
+Table format:
+```
+TableFormat|GPT4Lng:`Compare apples and oranges in terms of nutritional content and taste`
+```
+
+Generate text conditioned on key information: 
+Compressing an example prompt from the [OpenAI Codebook](https://github.com/openai/openai-cookbook/blob/main/text_writing_examples.md), "Write an email to a colleague named Jill congratulating her on her promotion. The tone should be warm yet professional. Mention how you admire the work she's been putting in. Include a joke about how her pet lizard Max enjoys eating grasshoppers. Mention how you're looking forward to the team off-site next week":
 ```
 EmlColleague|GPT4Lang:`Jill,promotion,warm_professional,admire_work,lizard_joke,offsite_next_week`
 ```
 
-These components are designed to be composable, allowing multiple compressed prompts to be chained together for more complex and conditional queries.
 
+These components are designed to be composable, allowing multiple compressed prompts to be chained together for more complex and conditional queries. Here's an example: 
+
+Let's say we have two compressed prompts:
+1. `QA|capitalFrance`: For the capital of France
+2. `QA|famousLandmark`: For a famous landmark in a city
+
+To chain them together, you can create a compressed prompt like this:
+```
+Chained|GPT4Lng:QA|capitalFrance_QA|famousLandmark
+```
+
+Chained compressed prompts can be designed to work with various retrieval methods. Here are a few examples:
+1. `Summary|GPT4Lng`: Summarize a given piece of text
+2. `Translate|GPT4Lng`: Translate a given text to a specified language
+3. `ExplainConcept|GPT4Lng`: Provide a simple explanation of a given concept
+4. `Rephrase|GPT4Lng`: Rephrase a given sentence or paragraph while maintaining its meaning
+5. `Analogies|GPT4Lng`: Generate analogies for a given concept or term
+
+You can also do conditional chaining, which involves chaining prompts based on the output of a previous prompt. For instance, suppose you want to ask about famous landmarks in France that are outside of Paris:
+1. `QA|cityFrance`: For cities in France
+2. `QA|famousLandmark`: For a famous landmark in a city
+
+Now, let's create the chained compressed prompt with a conditional marker `IF_NOT_PARIS`:
+```
+Chained|GPT4Lng:QA|cityFrance_IF_NOT_PARIS_QA|famousLandmark
+```
 
 
 
