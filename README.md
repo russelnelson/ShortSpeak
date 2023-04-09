@@ -180,3 +180,26 @@ Example:
     ChainSummarizeTranslate|GPT4Lng:Original text in English_Summary|GPT4Lng:TranslateTo|GPT4Lng:Spanish
 
 With PromptCrunch, you can create modular, efficient, and powerful queries for your language model, reducing the number of tokens required and improving the overall performance of your interactions with LLMs.
+
+Extended Results:
+```
+CmprsPrmpt|GPT4Lng:`Use the following clues to answer the following multiple-choice question.
+ 
+Clues:
+1. Miss Scarlett was the only person in the lounge.
+2. The person with the pipe was in the kitchen.
+3. Colonel Mustard was the only person in the observatory.
+4. Professor Plum was not in the library nor the billiard room.
+5. The person with the candlestick was in the observatory.
+ 
+Question: Was Colonel Mustard in the observatory with the candlestick?
+(a) Yes; Colonel Mustard was in the observatory with the candlestick
+(b) No; Colonel Mustard was not in the observatory with the candlestick
+(c) Unknown; there is not enough information to determine whether Colonel Mustard was in the observatory with the candlestick
+ 
+Solution:`
+```
+
+```
+CmprsAns|GPT4Lng:`Clues:1.Scarlett-lounge,2.pipe-kitchen,3.Mustard-observatory,4.Plum-!library-!billiard,5.candlestick-observatory_Q:Mustard+candlestick-observatory?_A:a)Yes`
+```
