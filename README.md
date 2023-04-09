@@ -88,6 +88,25 @@ Chained|GPT4Lng:QA|cityFrance_IF_NOT_PARIS_QA|famousLandmark
 ```
 
 
+Finally, you can use compressed prompts to provide structure to reasoning tasks. Here's a question from [bAbi QA](https://huggingface.co/datasets/facebook/babi_qa).
+Input:
+```
+wolves are afraid of sheep 
+sheep are afraid of wolves
+emily is a wolf
+mice are afraid of wolves
+winona is a wolf
+cats are afraid of sheep
+jessica is a cat
+gertrude is a sheep
+Question: what is emily afraid of?
+```
+Compressed prompt:
+```
+Chained|GPT4Lng:Question|GPT4Lng:```what is emily afraid of?```_SelectInfo|GPT4Lng:```Context: wolves are afraid of sheep. sheep are afraid of wolves. emily is a wolf. mice are afraid of wolves. winona is a wolf. cats are afraid of sheep. jessica is a cat. gertrude is a sheep.```_InferenceOnly|GPT4Lng:
+```
+This prompt first provides the question "what is emily afraid of?" and then instructs GPT-4 to select the relevant information from the provided context. Finally, it performs inference based on the selected information and returns only the inferred result.
+
 
 ## Motivation
 
