@@ -1,10 +1,34 @@
-# PromptCrunch - Chained, Compressed Prompts for Querying Large Language Models
+# ShortSpeak: A method for efficient communication with language models using shorthand notation
 
-PromptCrunch is a method for querying large language models (LLMs) using shorthand notation. The goal is to optimize and simplify interactions with language models while retaining their powerful reasoning capabilities.
+This repository contains code for the ShortSpeak (SS) prompt-compression strategy. The end-to-end SS approach includes (1) recursively using the language model to transform the user's input and prompt and (2) optimizing the balance between shorthand notation and language model performance for diverse use cases. We include code for both components and pointers to the publicly downloadable datasets.`
 
 This repo contains compressed prompts for common text-to-text applications such as summarization, translation, question-answering, and generation. These components are designed to be composable, allowing multiple compressed prompts to be chained together for more complex and conditional queries.
 
 # Table of Contents
+Introduction
+1.1. Overview of ShortSpeak
+1.2. End-to-End SS Approach
+Getting Started
+2.1. Installation
+2.2. Requirements
+Components of ShortSpeak
+3.1. Input Transformation and Recursive Prompting
+3.2. Optimizing Shorthand Notation and Performance
+Datasets
+4.1. Publicly Downloadable Datasets
+4.2. Dataset Usage Guidelines
+Example Use Cases
+5.1. Domain-Specific Applications
+5.2. Cross-Domain Adaptability
+Performance Evaluation
+6.1. Performance Metrics
+6.2. Benchmarking Results
+Contributing
+7.1. Code Contributions
+7.2. Bug Reports and Feature Requests
+License
+Acknowledgements
+
 - [PromptCrunch - Chained, Compressed Prompts for Querying Large Language Models](#promptcrunch---chained-compressed-prompts-for-querying-large-language-models)
    * [Quick Start](#quick-start)
    * [Examples](#examples)
@@ -24,7 +48,7 @@ CmprsPrmpt|GPT4Lng:`{Your Prompt Text}`
 
 ## Examples
 
-A compressed prompt uses the format `{Expected Response}|{Target Model}:{Condition}`
+A compressed prompt uses the format `{User Intent}|{Target Model}:{Context}`
 
 Summarize this text in 30 words:
 ```
@@ -54,7 +78,9 @@ TableFormat|GPT4Lng:`Compare apples and oranges in terms of nutritional content 
 ```
 
 Generate text conditioned on key information: 
-Compressing an example prompt from the [OpenAI Codebook](https://github.com/openai/openai-cookbook/blob/main/text_writing_examples.md), "Write an email to a colleague named Jill congratulating her on her promotion. The tone should be warm yet professional. Mention how you admire the work she's been putting in. Include a joke about how her pet lizard Max enjoys eating grasshoppers. Mention how you're looking forward to the team off-site next week":
+```Compressing an example prompt from the [OpenAI Codebook](https://github.com/openai/openai-cookbook/blob/main/text_writing_examples.md), "Write an email to a colleague named Jill congratulating her on her promotion. The tone should be warm yet professional. Mention how you admire the work she's been putting in. Include a joke about how her pet lizard Max enjoys eating grasshoppers. Mention how you're looking forward to the team off-site next week" :
+
+
 ```
 EmlColleague|GPT4Lang:`Jill,promotion,warm_professional,admire_work,lizard_joke,offsite_next_week`
 ```
