@@ -37,9 +37,10 @@ Table format:
 TableFormat|GPT4Lng:`Compare apples and oranges in terms of nutritional content and taste`
 ```
 
-Generate text conditioned on key information: 
-```Compressing an example prompt from the [OpenAI Codebook](https://github.com/openai/openai-cookbook/blob/main/text_writing_examples.md), "Write an email to a colleague named Jill congratulating her on her promotion. The tone should be warm yet professional. Mention how you admire the work she's been putting in. Include a joke about how her pet lizard Max enjoys eating grasshoppers. Mention how you're looking forward to the team off-site next week" :
-
+Generate text conditioned on key information ([Example from the OpenAI Cookbook](https://github.com/openai/openai-cookbook/blob/main/text_writing_examples.md)):
+```
+"Write an email to a colleague named Jill congratulating her on her promotion. The tone should be warm yet professional. Mention how you admire the work she's been putting in. Include a joke about how her pet lizard Max enjoys eating grasshoppers. Mention how you're looking forward to the team off-site next week"
+```
 
 ```
 EmlColleague|GPT4Lang:`Jill,promotion,warm_professional,admire_work,lizard_joke,offsite_next_week`
