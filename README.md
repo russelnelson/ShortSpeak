@@ -1,5 +1,7 @@
 # ShortSpeak
 
+This repository contains code for the ShortSpeak (SS) prompt-compression strategy. The end-to-end SS approach includes (1) recursively using the language model to transform the user's input and prompt and (2) optimizing the balance between shorthand notation and language model performance for diverse use cases. We include code for both components and pointers to the publicly downloadable datasets.
+
 ## Table of Contents
 
 * [Introduction](#introduction)
