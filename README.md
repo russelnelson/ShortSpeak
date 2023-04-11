@@ -1,12 +1,13 @@
 # ShortSpeak
 
-This repository contains code for the ShortSpeak (SS) prompt-compression strategy. The end-to-end SS approach includes (1) recursively using the language model to transform the user's input and prompt and (2) optimizing the balance between shorthand notation and language model performance for diverse use cases. We include code for both components and pointers to the publicly downloadable datasets.
+This repository contains code for ShortSpeak (SS), a compression framework designed for efficient communication with language models. The end-to-end SS approach includes (1) recursively using the language model to transform and compress the user's input or prompt and (2) optimizing the balance between shorthand notation and language model performance for diverse use cases. We include code for both components and pointers to the publicly downloadable datasets.
 
 ## Table of Contents
 
 * [Introduction](#introduction)
   * [Overview of ShortSpeak](#overview-of-shortspeak)
-  * [End-to-End SS Approach](#end-to-end-ss-approach) 
+  * [End-to-End SS Approach](#end-to-end-ss-approach)
+  * [Key Features of SS Notation](#key-features-of-ss-notation)
 * [Getting Started](#getting-started)
   * [Installation](#installation)
   * [Requirements](#requirements)
@@ -30,11 +31,9 @@ This repository contains code for the ShortSpeak (SS) prompt-compression strateg
 
 ## Introduction
 
-ShortSpeak is a shorthand notation system that allows users to input complex commands and queries with minimal keystrokes. This repository provides an overview of ShortSpeak, its end-to-end approach, and its various components. Additionally, it includes instructions for installation and requirements, descriptions of publicly downloadable datasets, example use cases, and performance evaluation metrics.
-
 ### Overview of ShortSpeak
 
-ShortSpeak (SS) is a prompt-compression strategy designed to enable efficient communication with language models using shorthand notation. The primary goal of SS is to reduce the input size while maintaining the context and meaning of user queries, thereby allowing faster interaction and reducing computational overhead.
+ShortSpeak (SS) is a method of transforming and optimizing communication with AI language models. Its primary function is to efficiently represent natural language prompts in a shorter and more concise format, reducing the length and complexity of input for language models while retaining context and meaning. Additionally, ShortSpeak can be used to compress model outputs and responses, making them more concise and easier to parse, which can be particularly beneficial for applications with limited display space or processing power. By reducing the input size of a prompt and the output size of a response, ShortSpeak allows for faster interaction and reduces computational overhead. Furthermore, the decreased token usage resulting from the compressed prompts and responses offers potential cost savings for applications making numerous API calls, enabling more efficient and affordable access to language model APIs.
 
 ### End-to-End SS Approach
 
@@ -44,6 +43,16 @@ The end-to-end SS approach comprises two main components:
 2. Optimizing the balance between shorthand notation and language model performance for diverse use cases.
 
 This repository includes code for both components, along with pointers to the publicly downloadable datasets.
+
+### The Key Features of SS Notation
+ShortSpeak offers several key features that make it an effective and versatile compression framework for language models:
+
+1. Brevity: SS reduces the length of natural language prompts by using concise representations, abbreviations, and symbols.
+2. Structured: The notation follows a structured pattern, using a combination of keywords, vertical bars (|), and backticks (`) to separate and organize information.
+3. Task-specific Adaptability: SS is designed to be adaptable for different tasks, such as sending an email or querying information.
+4. Contextual Learning: The notation retains essential context from the original natural language prompts, ensuring that the language model can generate relevant responses.
+5. Customizable: SS allows users to specify various details and parameters, such as tone and output format. 
+6. Chaining: SS allows users to create compressed chains of language model interactions to achieve more complex tasks, inferences, and multi-step reasoning.
 
 ## Getting Started
 
@@ -67,9 +76,9 @@ ShortSpeak requires Python 3.8 or higher. Additional dependencies are listed in 
 
 The input transformation component of ShortSpeak first recursively employs the Language Model (LM) to convert tasks and prompts from natural language to shorthand notation. The transformation is performed using ***compressed-prompt-chains***, which consist of a sequence of shorthand symbols and abbreviations representing the original user input in a more concise form. This component also prompts the user for any missing information, ensuring that the LM receives a complete and contextually relevant input.
 
-### Optimizing Shorthand Notation and Performance
+### Optimizing SS Notation and Performance
 
-This component deals with optimizing the balance between shorthand notation and language model performance. It ensures that the use of shorthand notation does not negatively affect the quality of generated responses while still maintaining efficiency. The code for this component is located in the [shorthand_optimization](./shorthand-optimization/) directory. caching
+This component deals with optimizing the balance between shorthand notation and language model performance. It ensures that the use of shorthand notation does not negatively affect the quality of generated responses while still maintaining efficiency. The code for this component is located in the [shortspeak_optimization](./shortspeak-optimization/) directory.
 
 ## Datasets
 
