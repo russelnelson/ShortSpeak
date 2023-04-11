@@ -13,6 +13,7 @@ This repository contains code for ShortSpeak (SS), a compression framework desig
   * [Requirements](#requirements)
 * [Components of ShortSpeak](#components-of-shortspeak)
   * [Input Transformation and Recursive Prompting](#input-transformation-and-recursive-prompting)
+  * [Output Formatting and Response Compression](#output-formatting-and-response-compression)
   * [Optimizing Shorthand Notation and Performance](#optimizing-shorthand-notation-and-performance)
 * [Datasets](#datasets)
   * [Publicly Downloadable Datasets](#publicly-downloadable-datasets)
@@ -75,6 +76,10 @@ ShortSpeak requires Python 3.8 or higher. Additional dependencies are listed in 
 ### Input Transformation and Recursive Prompting
 
 The input transformation component of ShortSpeak first recursively employs the Language Model (LM) to convert tasks and prompts from natural language to shorthand notation. The transformation is performed using ***compressed-prompt-chains***, which consist of a sequence of shorthand symbols and abbreviations representing the original user input in a more concise form. This component also prompts the user for any missing information, ensuring that the LM receives a complete and contextually relevant input.
+
+### Output Formatting and Response Compression
+
+The output component of ShortSpeak focuses on transforming and compressing the language model's responses into a more concise and easily interpretable format. By employing the ShortSpeak notation and structure, the output is formatted to highlight key information and present it in a streamlined manner. Users can quickly identify the relevant response details without having to sift through excessive text. This output compression not only optimizes the display and parsing of responses but also contributes to reduced token usage and improved efficiency in applications making numerous API calls.
 
 ### Optimizing SS Notation and Performance
 
