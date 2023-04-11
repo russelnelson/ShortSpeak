@@ -1,6 +1,21 @@
 # ShortSpeak
 
-This repository contains code for ShortSpeak (SS), a compression framework designed for efficient communication with language models. The end-to-end SS approach includes (1) recursively using the language model to transform and compress the user's input or prompt and (2) optimizing the balance between shorthand notation and language model performance for diverse use cases. We include code for both components and pointers to the publicly downloadable datasets.
+ShortSpeak (SS) is a compression framework for efficient communication with language models. It converts natural language input into shorthand notation, reducing the number of tokens and processing time:
+
+**Natural Language (68 Tokens)**
+* ```Write an email to a colleague named Jill congratulating her on her promotion. The tone should be warm yet professional. Mention how you admire the work she's been putting in.  Include a joke about how her pet lizard Max enjoys eating grasshoppers. Mention how you're looking forward to the team off-site next week.```
+
+**ShortSpeak (40 Tokens)**
+* ```EmlColleague|GPT4Lng:Jill,promotion,warm_professional,admire_work,lizard_joke,offsite_next_week```
+
+The components are designed to be composable, allowing multiple compressed prompts to be chained together for more complex and conditional queries:
+
+**Natural Language (25 Tokens)**
+* ```Can you tell me the smallest 5 US states by geographic size, in ascending order, and format the output as a table?```
+
+**Short Speak (21 Tokens)**
+* ```Tbl|GPT4Lng:smallestUSstates|5|asc|geoSize```
+
 
 ## Table of Contents
 
