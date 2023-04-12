@@ -77,7 +77,7 @@ ShortSpeak offers several key features that make it an effective and versatile c
 To install ShortSpeak, please follow these steps:
 
 ```bash
-git clone https://github.com/yourusername/ShortSpeak.git
+git clone https://github.com/russelnelson/ShortSpeak.git
 cd ShortSpeak
 pip install -r requirements.txt
 ```
