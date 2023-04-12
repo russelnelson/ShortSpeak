@@ -172,11 +172,11 @@ Instructions for contributing code can be found in the [contributing guide](./co
 
 ### Bug Reports and Feature Requests
 
-If you encounter any bugs or have suggestions for new features, please create an [issue](https://github.com/user/repo/issues). We appreciate your feedback and will address your concerns as soon as possible.
+If you encounter any bugs or have suggestions for new features, please create an [issue](https://github.com/user/repo/issues). 
 
 ## License
 
-The ShortSpeak repository is licensed under [Apache License 2.0](./LICENSE.md).
+The ShortSpeak repository is licensed under the MIT License (./LICENSE.md).
 
 ## Acknowledgements
 
