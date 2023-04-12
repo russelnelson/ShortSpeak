@@ -13,8 +13,36 @@ The components are designed to be composable, allowing multiple compressed promp
 **Natural Language (25 Tokens)**
 * ```Can you tell me the smallest 5 US states by geographic size, in ascending order, and format the output as a table?```
 
-**Short Speak (21 Tokens)**
+**ShortSpeak (21 Tokens)**
 * ```Tbl|GPT4Lng:smallestUSstates|5|asc|geoSize```
+
+While still preliminary, our research suggests that ShortSpeak has potential applications for reasoning tasks, including contextual learning:
+
+**Example: Applying ShortSpeak to a Reasoning Task**
+```
+CmprsPrmpt|GPT4Lng:Use the following clues to answer the following multiple-choice question.
+ 
+Clues:
+1. Miss Scarlett was the only person in the lounge.
+2. The person with the pipe was in the kitchen.
+3. Colonel Mustard was the only person in the observatory.
+4. Professor Plum was not in the library nor the billiard room.
+5. The person with the candlestick was in the observatory.
+ 
+Question: Was Colonel Mustard in the observatory with the candlestick?
+(a) Yes; Colonel Mustard was in the observatory with the candlestick
+(b) No; Colonel Mustard was not in the observatory with the candlestick
+(c) Unknown; there is not enough information to determine whether Colonel Mustard was in the observatory with the candlestick
+ 
+Solution:
+```
+
+**ShortSpeak Solution**
+```
+CmprsAns|GPT4Lng:Clues:1.Scarlett-lounge,2.pipe-kitchen,3.Mustard-observatory,4.Plum-!library-!billiard,5.candlestick-observatory_Q:Mustard+candlestick-observatory?_A:a)Yes
+```
+
+Questions, suggestions, or comments? File an issue or email [Russ](mailto:russel.nelson@gmail.com) 
 
 
 ## Table of Contents
